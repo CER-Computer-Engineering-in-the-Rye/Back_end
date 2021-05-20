@@ -23,8 +23,8 @@ $requestURI = implode('/', $uri);
  *
  */
 
-if ($requestURI === 'test' && $requestMethod === 'GET') {
-	require_once 'functions/test.php';
+if ($requestURI === 'signup' && $requestMethod === 'POST') {
+	require_once 'functions/signup.php';
 }
 else {
 	header("HTTP/1.1 404 Not Found");
