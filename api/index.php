@@ -35,7 +35,7 @@ else if ($requestURI === 'test' && $requestMethod === 'GET') {
 else if ($requestURI === 'board/write' && $requestMethod === 'POST') {
 	require_once 'functions/board_write.php';
 }
-else if ($requestURI === 'board/delete' && $requestMethod === 'POST') {
+else if ($requestURI === 'board/delete' && $requestMethod === 'DELETE') {
 	require_once 'functions/board_delete.php';
 }
 else if ($requestURI === 'board/update' && $requestMethod === 'PATCH') {
