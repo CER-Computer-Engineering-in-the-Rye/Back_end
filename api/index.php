@@ -38,6 +38,9 @@ else if ($requestURI === 'board/write' && $requestMethod === 'POST') {
 else if ($requestURI === 'board/delete' && $requestMethod === 'POST') {
 	require_once 'functions/board_delete.php';
 }
+else if ($requestURI === 'board/update' && $requestMethod === 'PATCH') {
+	require_once 'functions/board_patch.php';
+}
 else {
 	header("HTTP/1.1 404 Not Found");
 	exit();
