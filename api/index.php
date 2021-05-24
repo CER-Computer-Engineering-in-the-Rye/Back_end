@@ -26,6 +26,9 @@ $requestURI = implode('/', $uri);
 if ($requestURI === 'signup' && $requestMethod === 'POST') {
 	require_once 'functions/signup.php';
 }
+else if ($requestURI === 'login' && $requestMethod === 'POST') {
+	require_once 'functions/login.php';
+}
 else if ($requestURI === 'info' && $requestMethod === 'GET') {
 	require_once 'functions/board_info.php';
 }
