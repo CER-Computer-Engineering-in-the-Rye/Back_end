@@ -32,6 +32,9 @@ else if ($requestURI === 'signup' && $requestMethod === 'POST') {
 else if ($requestURI === 'login' && $requestMethod === 'POST') {
 	require_once 'functions/login.php';
 }
+else if ($requestURI === 'logout' && $requestMethod === 'GET') {
+	require_once 'functions/logout.php';
+}
 else if ($requestURI === 'user' && $requestMethod === 'GET') {
 	require_once 'functions/user.php';
 }
@@ -40,6 +43,12 @@ else if ($requestURI === 'board/info' && $requestMethod === 'GET') {
 }
 else if ($requestURI === 'board/write' && $requestMethod === 'POST') {
 	require_once 'functions/board_write.php';
+}
+else if ($requestURI === 'board/delete' && $requestMethod === 'DELETE') {
+	require_once 'functions/board_delete.php';
+}
+else if ($requestURI === 'board/update' && $requestMethod === 'POST') {
+	require_once 'functions/board_update.php';
 }
 else {
 	header("HTTP/1.1 404 Not Found");
