@@ -5,10 +5,12 @@ $subject=$_POST['sub'];
 $content=$_POST['cnt'];
 
 if($subject==""){
+    header("HTTP/1.1 400 Bad Request");
     echo json_encode(array('message'=>'제목이 비어있습니다'));
     exit();
 }
 if($content==""){
+    header("HTTP/1.1 400 Bad Request");
     echo json_encode(array('message'=>'내용이 비어있습니다'));
     exit();
 }
