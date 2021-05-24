@@ -23,17 +23,20 @@ $requestURI = implode('/', $uri);
  *
  */
 
-if ($requestURI === 'signup' && $requestMethod === 'POST') {
+if ($requestURI === 'test' && $requestMethod === 'GET') {
+	require_once 'functions/test.php';
+}
+else if ($requestURI === 'signup' && $requestMethod === 'POST') {
 	require_once 'functions/signup.php';
 }
 else if ($requestURI === 'login' && $requestMethod === 'POST') {
 	require_once 'functions/login.php';
 }
-else if ($requestURI === 'info' && $requestMethod === 'GET') {
+else if ($requestURI === 'board/info' && $requestMethod === 'GET') {
 	require_once 'functions/board_info.php';
 }
-else if ($requestURI === 'test' && $requestMethod === 'GET') {
-	require_once 'functions/test.php';
+else if ($requestURI === 'board/write' && $requestMethod === 'POST') {
+	require_once 'functions/board_write.php';
 }
 else {
 	header("HTTP/1.1 404 Not Found");
