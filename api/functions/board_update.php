@@ -4,6 +4,15 @@ $idx=$_GET['idx'];
 $subject=$_POST['sub'];
 $content=$_POST['cnt'];
 
+if($subject==""){
+    echo json_encode(array('message'=>'제목이 비어있습니다'));
+    exit();
+}
+if($content==""){
+    echo json_encode(array('message'=>'내용이 비어있습니다'));
+    exit();
+}
+
 $select_query = 'update board set subject="'.$subject.'", content="'.$content.'", date=now() where idx="'.$idx.'";';
 $result_query = mysqli_query($conn, $select_query);
 
