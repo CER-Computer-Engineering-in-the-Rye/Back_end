@@ -10,7 +10,7 @@ if($result_query){
 else{
     // 쿼리 실패
 	header("HTTP/1.1 500 Internal Server Error");
-	echo json_encode(array('message' => '정보를 불러오지 못했습니다.'));
+	echo json_encode(array('message' => '삭제하는데 실패했습니다.'));
 	exit();
 }
 mysqli_close($conn);
