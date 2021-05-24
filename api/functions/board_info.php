@@ -13,7 +13,7 @@ while($result_model = $result_query->fetch_array()){
             'datetime' => $result_model['date']
 ));
 }
-        
+         
 
 
 echo json_encode($list_data);
