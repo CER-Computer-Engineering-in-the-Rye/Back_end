@@ -1,5 +1,5 @@
 <?php
-$idx=$_POST['idx'];
+$idx=$_GET['idx'];
 $select_query = 'delete from board where idx="'.$idx.'"';
 $result_query = mysqli_query($conn, $select_query);
 
