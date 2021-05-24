@@ -17,7 +17,11 @@ if($content==""){
 
 $select_query = 'update board set subject="'.$subject.'", content="'.$content.'", date=now() where idx="'.$idx.'";';
 $result_query = mysqli_query($conn, $select_query);
-
+$result_model = $result_query->fetch_array();
+if (!$result_model) {
+	header("HTTP/1.1 400 Bad Request");
+	echo json_encode(array('message' => '존재하지 않는 idx입니다.'));
+}
 if($result_query){
     echo json_encode(array('result' => true));
 }
