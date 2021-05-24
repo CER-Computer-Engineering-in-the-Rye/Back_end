@@ -41,8 +41,8 @@ else if ($requestURI === 'board/info' && $requestMethod === 'GET') {
 else if ($requestURI === 'board/write' && $requestMethod === 'POST') {
 	require_once 'functions/board_write.php';
 }
-else if ($requestURI === 'login' && $requestMethod === 'POST') {
-	require_once 'functions/login.php';
+else if ($requestURI === 'board/delete' && $requestMethod === 'POST') {
+	require_once 'functions/board_delete.php';
 }
 else {
 	header("HTTP/1.1 404 Not Found");
