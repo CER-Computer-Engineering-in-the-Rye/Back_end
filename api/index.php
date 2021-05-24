@@ -26,6 +26,12 @@ $requestURI = implode('/', $uri);
 if ($requestURI === 'signup' && $requestMethod === 'POST') {
 	require_once 'functions/signup.php';
 }
+else if ($requestURI === 'info' && $requestMethod === 'GET') {
+	require_once 'functions/board_info.php';
+}
+else if ($requestURI === 'test' && $requestMethod === 'GET') {
+	require_once 'functions/test.php';
+}
 else {
 	header("HTTP/1.1 404 Not Found");
 	exit();
