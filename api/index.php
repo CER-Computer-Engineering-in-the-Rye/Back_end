@@ -32,6 +32,9 @@ else if ($requestURI === 'signup' && $requestMethod === 'POST') {
 else if ($requestURI === 'login' && $requestMethod === 'POST') {
 	require_once 'functions/login.php';
 }
+else if ($requestURI === 'logout' && $requestMethod === 'GET') {
+	require_once 'functions/logout.php';
+}
 else if ($requestURI === 'board/info' && $requestMethod === 'GET') {
 	require_once 'functions/board_info.php';
 }
