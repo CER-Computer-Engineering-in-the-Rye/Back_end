@@ -1,10 +1,10 @@
 <?php
-    $subject=$_POST['sub'];
-    $writer=$_POST['writer'];
+    $title=$_POST['sub'];
+    $user_idx = 1;
     $content=$_POST['cnt'];
 
 
-    if($subject==""){
+    if($title==""){
         header("HTTP/1.1 400 Bad Request");
         echo json_encode(array('message'=>'제목이 비어있습니다'));
         exit();
@@ -16,7 +16,7 @@
     }
     
 
-    $select_query = 'insert into board(subject, writer, content, date) values("'.$subject.'", "'.$writer.'", "'.$content.'", now());';
+    $select_query = 'insert into board(title, user_idx, content, date) values("'.$title.'", "'.$user_idx.'", "'.$content.'", now());';
     $result_query = mysqli_query($conn, $select_query);
     if (!$result_query) {
         // 쿼리 실패
