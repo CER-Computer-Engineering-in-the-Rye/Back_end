@@ -4,3 +4,6 @@ define('HOST', '');
 define('USERNAME', '');
 define('PASSWORD', '');
 define('DB_NAME', '');
+
+define('TOKEN_PASSWORD', '');
+define('TOKEN_EXPIRE_SECOND', 0);

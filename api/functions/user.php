@@ -28,8 +28,7 @@ if (!$result_model) {
 $idx = $result_model[0];
 $token_created = new DateTime($result_model[1]);
 $now = new DateTime();
-// 만료시간 60초
-if ($now->getTimestamp() - $token_created->getTimestamp() > 60) {
+if ($now->getTimestamp() - $token_created->getTimestamp() > TOKEN_EXPIRE_SECOND) {
 	$select_query = 'delete from token where idx = "'.$token_idx.'";';
 	$result_query = mysqli_query($conn, $select_query);
 	if (!$result_query) {
