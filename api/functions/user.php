@@ -57,6 +57,7 @@ if (!$result_model) {
 	echo json_encode(array('message' => '존재하지 않는 계정입니다.'));
 	exit();
 }
+$id = $result_model[0];
 
 // 토큰 (재)발급
 $select_query = 'delete from token where idx = '.$token_idx.';';
@@ -91,7 +92,7 @@ if (!$result_model) {
 }
 $token_idx = $result_model[0];
 $token = openssl_encrypt($token_idx, 'aes-256-cbc', TOKEN_PASSWORD, false, str_repeat(chr(0), 16));
-$id = $result_model[0];
+
 echo json_encode(array('id' => $id, 'token' => $token));
 
 mysqli_close($conn);
