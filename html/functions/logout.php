@@ -1,7 +1,5 @@
 <?php
 
-$token = $_SERVER['HTTP_X_ACCESS_TOKEN'];
-
 if (!isset($token)) {
 	header("HTTP/1.1 400 Bad Request");
 	echo json_encode(array('message' => '토큰이 필요합니다.'));

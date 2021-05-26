@@ -1,6 +1,6 @@
 <?php
     $title=$_POST['sub'];
-    $user_idx = 1;
+    $user_idx = $_POST['user_idx'];
     $content=$_POST['cnt'];
 
 

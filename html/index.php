@@ -21,8 +21,8 @@ $uri = explode('/', $uri);
  *
  */
 
-if ($uri[1] === 'test' && $requestMethod === 'GET') {
-	require_once 'functions/test.php';
+if (false) {
+	//
 }
 else if ($uri[1] === 'signup' && $requestMethod === 'POST') {
 	require_once 'functions/signup.php';
@@ -31,9 +31,15 @@ else if ($uri[1] === 'login' && $requestMethod === 'POST') {
 	require_once 'functions/login.php';
 }
 else if ($uri[1] === 'logout' && $requestMethod === 'GET') {
+	$token = $uri[2];
 	require_once 'functions/logout.php';
 }
+else if ($uri[1] === 'user' && $uri[2] === 'id' & $requestMethod === 'GET') {
+	$idx = (int)$uri[3];
+	require_once 'functions/user_id.php';
+}
 else if ($uri[1] === 'user' && $requestMethod === 'GET') {
+	$token = $uri[2];
 	require_once 'functions/user.php';
 }
 else if ($uri[1] === 'board' && $uri[2] === 'info' && $requestMethod === 'GET') {
@@ -43,11 +49,12 @@ else if ($uri[1] === 'board' && $uri[2] === 'info' && $requestMethod === 'GET') 
 else if ($uri[1] === 'board' && $uri[2] === 'write' && $requestMethod === 'POST') {
 	require_once 'functions/board_write.php';
 }
-else if ($uri[1] === 'board' && $uri[2] === 'delete' && $requestMethod === 'DELETE') {
-	$idx = $uri[3];
+else if ($uri[1] === 'board' && $uri[2] === 'delete' && $requestMethod === 'GET') {
+	$idx = (int)$uri[3];
 	require_once 'functions/board_delete.php';
 }
 else if ($uri[1] === 'board' && $uri[2] === 'update' && $requestMethod === 'POST') {
+	$idx = (int)$uri[3];
 	require_once 'functions/board_update.php';
 }
 else {

@@ -7,11 +7,12 @@ switch ($_SERVER['HTTP_ORIGIN']) {
 	case 'null': {
 		// local test용
 		header('Access-Control-Allow-Origin: null');
+		break;
 	}
 	case 'http://meetyourmeat.dothome.co.kr': {
 		header('Access-Control-Allow-Origin: http://meetyourmeat.dothome.co.kr');
+		break;
 	}
 }
 header('Access-Control-Allow-Methods: GET, POST, PATCH, DELETE');
-header('Access-Control-Allow-Headers: X-Access-Token');
 header('HTTP/1.1 200 OK');
