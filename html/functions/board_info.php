@@ -8,10 +8,10 @@ if ($idx === 0) {
 	while($result_model = $result_query->fetch_array()){
 	    array_push($list_data['item'],
 	        array('idx' => $result_model['idx'],
-	            'subject' => $result_model['subject'],
-	            'writer' => $result_model['writer'],
+	            'title' => $result_model['title'],
+	            'user_idx' => $result_model['user_idx'],
 	            'content' => $result_model['content'],
-	            'datetime' => $result_model['date']
+	            'date' => $result_model['date']
 	));
 	}
 	echo json_encode($list_data);
